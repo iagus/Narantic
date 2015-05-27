@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527190426) do
+ActiveRecord::Schema.define(version: 20150527192219) do
 
   create_table "resources", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20150527190426) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "role",       limit: 4
   end
 
   create_table "tickets", force: :cascade do |t|
