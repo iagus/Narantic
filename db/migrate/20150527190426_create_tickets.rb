@@ -5,7 +5,9 @@ class CreateTickets < ActiveRecord::Migration
       t.text :description
       t.datetime :created_at
 
-      t.timestamps null: false
+      t.belongs_to :user, index: true
+      t.references :user, index: true
+      t.references :urgency
     end
   end
 end
