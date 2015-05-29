@@ -12,11 +12,16 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  def correct_user
+    @user = current_user
+    redirect_to main_path, notice: 'Not authorized' if @user.role_id.zero?
+  end
+
   protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :name, :surname, :password, :password_confirmation)}
+      devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :name, :surname, :password, :password_confirmation, :role_id)}
       devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :name, :surname, :password, :password_confirmation)}
-      devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :name, :surname, :password, :password_confirmation)}
+      devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :name, :surname, :password, :password_confirmation, :role_id)}
     end
 end
