@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav id="menu">
+    <ul>
+      <li>Reservar recursos</li>
+      <li>Reservar aulas</li>
+      <li>Crear incidencia</li>
+    </ul>
+  </nav>
   <div class="content">
     <% flash.each do |name, message| %>
       <%= content_tag(:div, message, class: 'alert') %>
