@@ -17,6 +17,12 @@ class ApplicationController < ActionController::Base
     redirect_to main_path, notice: 'Not authorized' if @user.role_id.zero?
   end
 
+  def self.is_user_admin?
+    @user = current_user
+    @role = Role.find_by(id: @user.role_id).role
+    @role.eql? 'admin'
+  end
+
   protected
 
     def configure_permitted_parameters
