@@ -1,0 +1,13 @@
+.footer {
+  background-color: $base_green;
+  height: 30px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  p {
+    text-align: center;
+    color: #fff;
+    padding-top: 5px;
+  }
+}
