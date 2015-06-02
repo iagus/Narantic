@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="topbar"></div>
   <nav id="menu">
-    <ul>
+    <ul class="wrapper">
       <li><%= link_to 'Efectuar reserva', resources_path %></li>
       <li><%= link_to 'Incidencias', tickets_path %></li>
       <% if user_signed_in? && is_user_admin? %>
@@ -19,10 +20,12 @@
     </ul>
   </nav>
   <div class="content">
-    <% flash.each do |name, message| %>
-      <%= content_tag(:div, message, class: 'alert') %>
-    <% end %>
-    <%= yield %>
+    <div class="wrapper">
+      <% flash.each do |name, message| %>
+        <%= content_tag(:div, message, class: 'alert') %>
+      <% end %>
+      <%= yield %>
+    </div>
   </div>
 </body>
 </html>
