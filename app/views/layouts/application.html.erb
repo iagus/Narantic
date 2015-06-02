@@ -11,13 +11,10 @@
     <ul>
       <li><%= link_to 'Efectuar reserva', resources_path %></li>
       <li><%= link_to 'Incidencias', tickets_path %></li>
-      <% if user_signed_in? %>
-        <%= @level_access = Role.find_by(id: current_user.role_id).role %>
-        <% if @level_access.eql? 'admin' %>
-          <li><%= link_to 'Gestionar recursos', resources_path %></li>
-          <li><%= link_to 'Gestionar roles', roles_path %></li>
-          <li><%= link_to 'Gestionar urgencias', urgencies_path %></li>
-        <% end %>
+      <% if user_signed_in? && is_user_admin? %>
+        <li><%= link_to 'Gestionar recursos', resources_path %></li>
+        <li><%= link_to 'Gestionar roles', roles_path %></li>
+        <li><%= link_to 'Gestionar urgencias', urgencies_path %></li>
       <% end %>
     </ul>
   </nav>
