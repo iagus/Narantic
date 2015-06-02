@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  helper_method :is_user_admin?
 
   def after_sign_in_path_for resource
     main_path
@@ -17,7 +18,7 @@ class ApplicationController < ActionController::Base
     redirect_to main_path, notice: 'Not authorized' if @user.role_id.zero?
   end
 
-  def self.is_user_admin?
+  def is_user_admin?
     @user = current_user
     @role = Role.find_by(id: @user.role_id).role
     @role.eql? 'admin'
