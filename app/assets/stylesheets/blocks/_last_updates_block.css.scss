@@ -1,0 +1,16 @@
+.last-updates {
+  width: 100%;
+  margin-top: 20px;
+  .last-update {
+    width: 24%;
+    display: inline-block;
+    margin-left: 0.3em;
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid $lighter_green;
+    p:first-child {
+      font-size: 12px;
+      padding-bottom: 5px;
+    }
+  }
+}
