@@ -14,13 +14,11 @@ class ApplicationController < ActionController::Base
   end
 
   def correct_user
-    @user = current_user
-    redirect_to main_path, notice: 'Not authorized' if @user.role_id.zero?
+    redirect_to main_path, notice: 'Not authorized' if :is_user_admin?
   end
 
   def is_user_admin?
-    @user = current_user
-    @role = Role.find_by(id: @user.role_id).role
+    @role = Role.find_by(id: current_user.role_id).role
     @role.eql? 'admin'
   end
 
