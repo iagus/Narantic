@@ -10,12 +10,14 @@
   <div class="topbar"></div>
   <nav id="menu">
     <ul class="wrapper">
+      <h1><%= link_to 'Narantic', main_path %></h1>
       <li><%= link_to 'Efectuar reserva', resources_path %></li>
       <li><%= link_to 'Incidencias', tickets_path %></li>
-      <% if user_signed_in? && is_user_admin? %>
+      <% if user_signed_in? && current_user.is_user_admin? %>
         <li><%= link_to 'Gestionar recursos', resources_path %></li>
         <li><%= link_to 'Gestionar roles', roles_path %></li>
         <li><%= link_to 'Gestionar urgencias', urgencies_path %></li>
+        <li><%= link_to 'Gestionar usuarios', users_path %></li>
       <% end %>
     </ul>
   </nav>
