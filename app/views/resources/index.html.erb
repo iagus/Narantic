@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Resources</h1>
+<h1>Listado de Recursos</h1>
 
-<table>
+<%= link_to 'New Resource', new_resource_path %>
+
+<table class="listing">
   <thead>
     <tr>
       <th>Name</th>
@@ -21,7 +23,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Resource', new_resource_path %>

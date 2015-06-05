@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tickets</h1>
+<h1>Incidencias</h1>
 
-<table>
+<%= link_to 'New Ticket', new_ticket_path %>
+
+<table class="listing">
   <thead>
     <tr>
       <th>Title</th>
@@ -25,7 +27,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Ticket', new_ticket_path %>

@@ -1,7 +1,7 @@
 class UrgenciesController < ApplicationController
   before_action :set_urgency, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :correct_user
+  before_action :correct_user, except: [:index]
 
   # GET /urgencies
   # GET /urgencies.json
