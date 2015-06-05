@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :correct_user, only: [:new, :edit, :create, :update, :destroy]
+  before_action :correct_user, except: [:index]
 
   # GET /resources
   # GET /resources.json
