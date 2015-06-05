@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :role
+
+  def is_user_admin?
+    Role.find_by(id: self.role_id).role.eql? 'admin'
+  end
 end
