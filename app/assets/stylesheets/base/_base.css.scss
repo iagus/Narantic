@@ -8,11 +8,14 @@ div {
 }
 
 .wrapper {
-  max-width: 960px;
+  max-width: 985px;
   margin: 0 auto;
   @include clearfix();
 }
 
 .alert {
   color: $darker_green;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid $lighter_green;
 }

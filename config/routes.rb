@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :tickets
   resources :urgencies
   devise_for :users
-  resources :users, only: [:index]
+  resources :users
   resources :roles
   resources :resources
 
