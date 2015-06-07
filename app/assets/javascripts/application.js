@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require lib/jquery.matchHeight
+//= require lib/formikation
 //= require ready
