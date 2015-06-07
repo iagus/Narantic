@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
   has_one :role
+  has_many :bookings
 
   def is_user_admin?
     Role.find_by(id: self.role_id).role.eql? 'admin'
