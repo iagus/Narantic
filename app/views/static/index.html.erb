@@ -2,9 +2,11 @@
 <p>Últimos cambios:</p>
 
 <div class="last-updates">
+
   <div class="last-update">
-    <p>Último usuario agregado</p>
-    <%= "#{@user.name} #{@user.surname}" %>
+    <p>Última reserva</p>
+    <p><%= "#{@booking.resource.name}" %></p>
+    <p><%= "#{@booking.start.day}/#{@booking.start.month} al #{@booking.end.day}/#{@booking.end.month}" %></p>
   </div>
 
   <div class="last-update">
@@ -16,4 +18,11 @@
     <p>Último recurso agregado</p>
     <p><%= "#{@resource.name}" %></p>
   </div>
+
+
+  <div class="last-update">
+    <p>Último usuario agregado</p>
+    <p><%= "#{@user.name} #{@user.surname}" %></p>
+  </div>
+
 </div>
