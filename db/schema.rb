@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150607212154) do
+ActiveRecord::Schema.define(version: 20150608192305) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "resource_id", limit: 4
     t.integer  "user_id",     limit: 4
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.date     "start"
+    t.date     "end"
   end
 
   add_index "bookings", ["resource_id"], name: "index_bookings_on_resource_id", using: :btree
