@@ -4,5 +4,6 @@ class StaticController < ApplicationController
     @user = User.last
     @ticket = Ticket.last
     @resource = Resource.last
+    @booking = Booking.last
   end
 end
