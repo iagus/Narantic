@@ -29,6 +29,30 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
 
+    # obtiene las reservas existentes de ese recurso
+    @bookings = Booking.where(resource_id: @booking.resource_id)
+
+    # obtiene la fecha de inicio y la fecha final de la reserva
+    # que se intenta efectuar
+    @start_time = @booking.start
+    @end_time = @booking.end
+
+    # crea un rango de fechas para comparar
+    @range = @start_time..@end_time
+
+    # comprueba que la tabla no este vacia
+    if @bookings.present?
+      # comprueba que no existan ya reservas en ese rango tiempo
+      @bookings.each do |booking|
+
+        # existe reserva en ese rango, redirige de nuevo al index y termina el metodo
+        if @range === booking.start || @range === booking.end
+          redirect_to bookings_path, notice: 'Ya existe una reserva para esos dias'
+          return
+        end
+      end
+    end
+
     respond_to do |format|
       if @booking.save
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
@@ -72,6 +96,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:resource_id, :user_id)
+      params.require(:booking).permit(:resource_id, :user_id, :start, :end)
     end
 end

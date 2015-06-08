@@ -12,18 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :created_at %><br>
-    <%= f.datetime_select :created_at %>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id, :value => "#{current_user.name} #{current_user.surname}" %>
+  </div>
+  <div class="field">
+    <%= f.label :urgency %>
+    <%= f.select :urgency_id, options_for_select(Urgency.all.map{ |u| [u.level, u.id] }) %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $('#ticket_user_id').prop('disabled', true);
+</script>
