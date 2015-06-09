@@ -8,6 +8,9 @@
     padding: 10px;
     vertical-align: top;
     border: 1px solid $lighter_green;
+    p {
+      margin-bottom: 15px;
+    }
     p:first-child {
       font-size: 12px;
       padding-bottom: 5px;
