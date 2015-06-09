@@ -6,30 +6,29 @@
   <div class="last-update">
     <p>Últimas reservas</p>
     <% @bookings.each do |booking| %>
-      <p><%= "#{booking.resource.name}" %></p>
-      <p><%= "#{booking.start.day}/#{booking.start.month} al #{booking.end.day}/#{booking.end.month}" %></p>
+      <p><%= link_to "#{booking.resource.name}", booking_path(booking) %><br/>
+      <%= "#{booking.start.day}/#{booking.start.month} al #{booking.end.day}/#{booking.end.month}" %></p>
     <% end %>
   </div>
 
   <div class="last-update">
     <p>Últimas incidencias agregadas</p>
     <% @tickets.each do |ticket| %>
-      <p><%= "#{ticket.title}" %></p>
+      <p><%= link_to "#{ticket.title}", ticket_path(ticket) %></p>
     <% end %>
   </div>
 
   <div class="last-update">
     <p>Últimos recursos agregados</p>
     <% @resources.each do |resource| %>
-      <p><%= "#{resource.name}" %></p>
+      <p><%= link_to "#{resource.name}", resource_path(resource) %></p>
     <% end %>
   </div>
-
 
   <div class="last-update">
     <p>Últimos usuarios agregados</p>
     <% @users.each do |user| %>
-      <p><%= "#{user.name} #{user.surname}" %></p>
+      <p><%= link_to "#{user.name} #{user.surname}", user_path(user) %></p>
     <% end %>
   </div>
 

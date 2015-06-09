@@ -1,7 +1,9 @@
-<p>
-  <strong>Name:</strong>
-  <%= @resource.name %>
-</p>
+<div class="element">
+  <div class="data">
+    <p><strong>Nombre: </strong>
+    <%= @resource.name %></p>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_resource_path(@resource) %> |
-<%= link_to 'Back', resources_path %>
+<%= link_to 'Editar', edit_resource_path(@resource) %> |
+<%= link_to 'Volver', resources_path %>

@@ -1,12 +1,23 @@
-<p>
-  <strong>Resource:</strong>
-  <%= @booking.resource.name %>
-</p>
+<div class="element">
+  <div class="data">
+      <p><strong>Resource:</strong>
+      <%= @booking.resource.name %></p>
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @booking.user.name %>
-</p>
+  <div class="data">
+      <p><strong>User:</strong>
+      <%= @booking.user.name %></p>
+  </div>
 
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>
+  <div class="data">
+    <p><strong>Fecha inicio:</strong>
+    <%= @booking.start %></p>
+  </div>
+
+  <div class="data">
+    <p><strong>Fecha fin:</strong>
+    <%= @booking.end %></p>
+  </div>
+  <%= link_to 'Editar', edit_booking_path(@booking) %> |
+  <%= link_to 'Volver', bookings_path %>
+</div>
