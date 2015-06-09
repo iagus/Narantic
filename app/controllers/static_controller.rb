@@ -1,9 +1,9 @@
 class StaticController < ApplicationController
   before_action :authenticate_user!
   def index
-    @user = User.last
-    @ticket = Ticket.last
-    @resource = Resource.last
-    @booking = Booking.last
+    @users = User.last(3)
+    @tickets = Ticket.last(3)
+    @resources = Resource.last(3)
+    @bookings = Booking.last(3)
   end
 end

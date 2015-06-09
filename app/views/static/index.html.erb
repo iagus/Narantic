@@ -5,24 +5,32 @@
 
   <div class="last-update">
     <p>Última reserva</p>
-    <p><%= "#{@booking.resource.name}" %></p>
-    <p><%= "#{@booking.start.day}/#{@booking.start.month} al #{@booking.end.day}/#{@booking.end.month}" %></p>
+    <% @bookings.each do |booking| %>
+      <p><%= "#{booking.resource.name}" %></p>
+      <p><%= "#{booking.start.day}/#{booking.start.month} al #{booking.end.day}/#{booking.end.month}" %></p>
+    <% end %>
   </div>
 
   <div class="last-update">
     <p>Última incidencia agregada</p>
-    <p><%= "#{@ticket.title}" %></p>
+    <% @tickets.each do |ticket| %>
+      <p><%= "#{ticket.title}" %></p>
+    <% end %>
   </div>
 
   <div class="last-update">
     <p>Último recurso agregado</p>
-    <p><%= "#{@resource.name}" %></p>
+    <% @resources.each do |resource| %>
+      <p><%= "#{resource.name}" %></p>
+    <% end %>
   </div>
 
 
   <div class="last-update">
     <p>Último usuario agregado</p>
-    <p><%= "#{@user.name} #{@user.surname}" %></p>
+    <% @users.each do |user| %>
+      <p><%= "#{user.name} #{user.surname}" %></p>
+    <% end %>
   </div>
 
 </div>
