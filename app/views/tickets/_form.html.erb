@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :user_id %>
-    <%= f.text_field :user_id, :value => "#{current_user.name} #{current_user.surname}" %>
+    <%= f.text_field :user_id, :value => "#{current_user.name} #{current_user.surname}", disabled: true %>
   </div>
   <div class="field">
     <%= f.label :urgency %>
