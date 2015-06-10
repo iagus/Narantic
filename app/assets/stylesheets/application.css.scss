@@ -1,7 +1,6 @@
 
 /* lib */
 @import "lib/normalize";
-@import "lib/formikation";
 
 /* base */
 @import "base/variables";
@@ -14,6 +13,7 @@
 /* layout */
 @import "layout/header";
 @import "layout/footer";
+@import "layout/forms";
 
 /* blocks */
 @import "blocks/last_updates_block";
