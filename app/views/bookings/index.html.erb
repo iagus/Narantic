@@ -23,8 +23,16 @@
             <td><%= "#{booking.user.name} #{booking.user.surname}" %></td>
             <td><%= booking.start %></td>
             <td><%= booking.end %></td>
-            <td><%= link_to 'Ver', booking %></td>
-            <td><%= link_to 'Editar', edit_booking_path(booking) %></td>
+            <td>
+              <% if current_user.id == booking.user.id %>
+                <%= link_to 'Ver', booking %>
+              <% end %>
+            </td>
+            <td>
+              <% if current_user.id == booking.user.id %>
+                <%= link_to 'Editar', edit_booking_path(booking) %>
+              <% end %>
+            </td>
             <td><%= link_to 'Eliminar', booking, method: :delete, data: { confirm: '¿Seguro que deseas eliminar?' } %></td>
           </tr>
         <% end %>
