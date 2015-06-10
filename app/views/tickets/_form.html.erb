@@ -28,6 +28,6 @@
     <%= f.select :urgency_id, options_for_select(Urgency.all.map{ |u| [u.level, u.id] }) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Enviar' %>
   </div>
 <% end %>

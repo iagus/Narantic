@@ -11,7 +11,7 @@
     <% if user_signed_in? %>
       <div class="wrapper">
         <ul>
-          <li><%= link_to 'Mi cuenta', '#' %></li>
+          <li><%= link_to 'Mi cuenta', user_path(current_user.id) %></li>
           <li><%= link_to 'Cerrar sesión', destroy_user_session_path(current_user), :method => :delete %></li>
         </ul>
       </div>
