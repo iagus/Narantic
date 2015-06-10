@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tasks
   resources :bookings
   resources :tickets
   resources :urgencies
