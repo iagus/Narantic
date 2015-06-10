@@ -30,7 +30,7 @@ class UrgenciesController < ApplicationController
 
     respond_to do |format|
       if @urgency.save
-        format.html { redirect_to @urgency, notice: 'Urgency was successfully created.' }
+        format.html { redirect_to @urgency, notice: 'Nivel de urgencia creado satisfactoriamente' }
         format.json { render :show, status: :created, location: @urgency }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class UrgenciesController < ApplicationController
   def update
     respond_to do |format|
       if @urgency.update(urgency_params)
-        format.html { redirect_to @urgency, notice: 'Urgency was successfully updated.' }
+        format.html { redirect_to @urgency, notice: 'Nivel de urgencia actualizado satisfactoriamente' }
         format.json { render :show, status: :ok, location: @urgency }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class UrgenciesController < ApplicationController
   def destroy
     @urgency.destroy
     respond_to do |format|
-      format.html { redirect_to urgencies_url, notice: 'Urgency was successfully destroyed.' }
+      format.html { redirect_to urgencies_url, notice: 'Urgencia destruida' }
       format.json { head :no_content }
     end
   end

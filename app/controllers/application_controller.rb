@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def correct_user
-    redirect_to main_path, notice: 'Not authorized' unless current_user.is_user_admin?
+    redirect_to main_path, notice: 'No autorizado' unless current_user.is_user_admin?
   end
 
   protected
