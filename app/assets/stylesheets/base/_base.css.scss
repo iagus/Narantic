@@ -1,6 +1,9 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
   @extend ._fn16;
 }
 
@@ -33,4 +36,8 @@ a {
 hr {
   clear: both;
   margin-bottom: 15px;
+}
+
+.small {
+  width: 20%;
 }
