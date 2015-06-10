@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :correct_user
+  before_action :correct_user, except: [:show]
 
   def index
     @users = User.all
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:id, :email, :name, :surname, :password, :role)
+      params.require(:user).permit(:id, :email, :name, :surname, :password, :role_id)
     end
 
 end

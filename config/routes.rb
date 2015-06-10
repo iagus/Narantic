@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     root to: 'devise/sessions#new'
   end
 
+  # ruta para destruir usuarios
+  match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
   get '/main' => 'static#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
