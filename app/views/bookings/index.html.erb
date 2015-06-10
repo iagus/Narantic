@@ -1,7 +1,7 @@
   <div class="right">
     <h1>Listing Bookings</h1>
 
-    <%= link_to 'New Booking', new_booking_path %>
+    <%= link_to 'Crear reserva nueva', new_booking_path %>
 
     <table class="listing">
       <thead>
@@ -21,9 +21,9 @@
             <td><%= booking.user.name %></td>
             <td><%= booking.start %></td>
             <td><%= booking.end %></td>
-            <td><%= link_to 'Show', booking %></td>
-            <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-            <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Ver', booking %></td>
+            <td><%= link_to 'Editar', edit_booking_path(booking) %></td>
+            <td><%= link_to 'Eliminar', booking, method: :delete, data: { confirm: '¿Seguro que deseas eliminar?' } %></td>
           </tr>
         <% end %>
       </tbody>

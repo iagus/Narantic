@@ -16,7 +16,7 @@
 
   <div class="data">
     <p><strong>Estado actual: </strong>
-    <%= @ticket.urgency.level %></p>
+    <%= Urgency.find(@ticket.urgency_id).level %></p>
   </div>
 </div>
 
