@@ -3,6 +3,24 @@
   width: 100%;
   height: 30px;
   background-color: $black;
+  @extend ._fn13;
+  color: #fff;
+  ul {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style-type: none;
+    li {
+      align-self: center;
+      margin-left: 15px;
+      a {
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
 }
 
 header {

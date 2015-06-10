@@ -7,7 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="topbar"></div>
+  <div class="topbar">
+    <% if user_signed_in? %>
+      <div class="wrapper">
+        <ul>
+          <li><%= link_to 'Mi cuenta', '#' %></li>
+          <li><%= link_to 'Cerrar sesión', destroy_user_session_path(current_user), :method => :delete %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
   <header>
     <div class="wrapper">
       <h1><%= link_to 'Narantic', main_path %></h1>
