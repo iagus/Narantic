@@ -6,7 +6,6 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
-    @resources = Resource.all
     @bookings = Booking.all
   end
 
