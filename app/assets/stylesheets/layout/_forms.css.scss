@@ -1,0 +1,12 @@
+form {
+  .field {
+    display: inline-block;
+    margin-right: 20px;
+    margin: 0 20px 20px 0;
+    label {
+      @extend ._fb16;
+      margin-right: 5px;
+    }
+  }
+}
+

@@ -1,4 +1,4 @@
-<%= form_for(@urgency, html: { class: 'formikation' }) do |f| %>
+<%= form_for(@urgency) do |f| %>
   <% if @urgency.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@urgency.errors.count, "error") %> prohibited this urgency from being saved:</h2>
