@@ -1,0 +1,37 @@
+/* Font sizes */
+$f_sizes: 58 46 42 40 36 34 33 32 30 29 28 26 24 22 21 20 19 18 17 16 15 14 13 12 11;
+$f_families: fn fm fb;
+
+%fn {
+  font-family: $roboto;
+  font-weight: 400;
+}
+
+%fm {
+  font-family: $roboto;
+  font-weight: 500;
+}
+
+%fb {
+  font-family: $roboto;
+  font-weight: 700;
+}
+
+@each $fam in $f_families {
+  @each $siz in $f_sizes {
+    ._#{$fam}#{$siz} {
+      @extend %#{$fam};
+    }
+  }
+}
+
+@each $siz in $f_sizes {
+  %base#{$siz} {
+    font-size: #{$siz}px;
+  }
+  @each $fam in $f_families {
+    ._#{$fam}#{$siz} {
+      @extend %base#{$siz};
+    }
+  }
+}

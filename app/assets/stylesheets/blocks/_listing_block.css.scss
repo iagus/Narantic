@@ -1,10 +1,13 @@
 table.listing {
-    margin: 40px 0 40px 0;
+    width: 100%;
+    margin: 35px 0 40px 0;
     tr {
       border-top: 1px solid #000;
+      th {
+        @extend ._fb18;
+      }
       &.headers {
         text-transform: uppercase;
-        font-size: 18px;
         color: #000;
         border-top: 0;
       }
@@ -15,6 +18,12 @@ table.listing {
     td {
       padding: 20px;
       vertical-align: top;
+    }
+    &.medium {
+      width: 50%;
+    }
+    &.small {
+      width: 25%;
     }
 
 }
