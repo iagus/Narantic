@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608192305) do
+ActiveRecord::Schema.define(version: 20150609235109) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "resource_id", limit: 4

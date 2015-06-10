@@ -1,6 +1,6 @@
 <h1>Listado de Recursos</h1>
 
-<%= link_to 'New Resource', new_resource_path %>
+<%= link_to 'Nuevo recurso', new_resource_path %>
 
 <table class="listing">
   <thead>
@@ -14,9 +14,9 @@
     <% @resources.each do |resource| %>
       <tr>
         <td><%= resource.name %></td>
-        <td><%= link_to 'Show', resource %></td>
-        <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
-        <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', resource %></td>
+        <td><%= link_to 'Editar', edit_resource_path(resource) %></td>
+        <td><%= link_to 'Eliminar', resource, method: :delete, data: { confirm: '¿Seguro que deseas eliminar??' } %></td>
       </tr>
     <% end %>
   </tbody>

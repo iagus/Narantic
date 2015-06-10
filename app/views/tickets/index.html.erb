@@ -1,13 +1,14 @@
 <h1>Incidencias</h1>
 
-<%= link_to 'New Ticket', new_ticket_path %>
+<%= link_to 'Crear nueva incidencia', new_ticket_path %>
 
 <table class="listing">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Created at</th>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+      <th>Creado a las</th>
+      <th>Estado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +19,10 @@
         <td><%= ticket.title %></td>
         <td><%= ticket.description %></td>
         <td><%= ticket.created_at %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= Urgency.find(ticket.urgency_id).level %></td>
+        <td><%= link_to 'Ver', ticket %></td>
+        <td><%= link_to 'Editar', edit_ticket_path(ticket) %></td>
+        <td><%= link_to 'Eliminar', ticket, method: :delete, data: { confirm: '¿Seguro que deseas eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>

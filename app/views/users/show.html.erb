@@ -1,0 +1,33 @@
+<div class="element">
+  <div class="data">
+    <p><strong>Nombre:</strong>
+    <%= @user.name %></p>
+  </div>
+
+  <div class="data">
+    <p><strong>Apellidos: </strong>
+    <%= @user.surname %></p>
+  </div>
+
+  <div class="data">
+    <p><strong>Creado el: </strong>
+    <%= @user.created_at %></p>
+  </div>
+
+  <div class="data">
+    <p><strong>Ultimo inicio de sesion: </strong>
+    <%= @user.last_sign_in_at %></p>
+  </div>
+
+  <div class="data">
+    <p><strong>IP desde la que se accedio a la ultima sesion: </strong>
+    <%= @user.last_sign_in_ip %></p>
+  </div>
+  <div class="data">
+    <p><strong>Número total de inicio de sesiones: </strong>
+    <%= @user.sign_in_count %></p>
+  </div>
+  <div class="data"></div>
+
+  <%= link_to 'Editar', edit_user_path(@user) %>
+</div>

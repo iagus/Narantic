@@ -1,17 +1,24 @@
-<p>
-  <strong>Title:</strong>
-  <%= @ticket.title %>
-</p>
+<div class="element">
+  <div class="data">
+    <p><strong>Titulo: </strong>
+    <%= @ticket.title %></p>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @ticket.description %>
-</p>
+  <div class="data">
+    <p><strong>Descripcion: </strong>
+    <%= @ticket.description %></p>
+  </div>
 
-<p>
-  <strong>Created at:</strong>
-  <%= @ticket.created_at %>
-</p>
+  <div class="data">
+    <p><strong>Creado a las: </strong>
+    <%= @ticket.created_at %></p>
+  </div>
+
+  <div class="data">
+    <p><strong>Estado actual: </strong>
+    <%= Urgency.find(@ticket.urgency_id).level %></p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', tickets_path %>

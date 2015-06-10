@@ -1,6 +1,6 @@
 <h1>Listado de Urgencias</h1>
 
-<%= link_to 'New Urgency', new_urgency_path %>
+<%= link_to 'Nueva urgencia', new_urgency_path %>
 
 <table class="listing">
   <thead>
@@ -14,9 +14,9 @@
     <% @urgencies.each do |urgency| %>
       <tr>
         <td><%= urgency.level %></td>
-        <td><%= link_to 'Show', urgency %></td>
-        <td><%= link_to 'Edit', edit_urgency_path(urgency) %></td>
-        <td><%= link_to 'Destroy', urgency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', urgency %></td>
+        <td><%= link_to 'Editar', edit_urgency_path(urgency) %></td>
+        <td><%= link_to 'Eliminar', urgency, method: :delete, data: { confirm: '¿Seguro que deseas eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
