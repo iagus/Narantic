@@ -25,6 +25,9 @@
         <td><%= link_to 'Ver', ticket %></td>
         <td><%= link_to 'Editar', edit_ticket_path(ticket) %></td>
         <td><%= link_to 'Eliminar', ticket, method: :delete, data: { confirm: '¿Seguro que deseas eliminar?' } %></td>
+        <% if current_user.is_user_admin? %>
+          <td><%= link_to 'Generar tarea', new_task_path(ticket_id: ticket.id) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

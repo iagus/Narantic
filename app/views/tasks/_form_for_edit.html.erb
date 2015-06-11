@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :ticket_id, class: 'hidden' %>
-    <%= f.text_field :ticket_id, value: request.query_parameters[:ticket_id], class: 'hidden' %>
-  </div>
-
-  <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>

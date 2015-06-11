@@ -12,7 +12,7 @@
       <div class="wrapper">
         <ul>
           <li><%= link_to 'Mi cuenta', user_path(current_user.id) %></li>
-          <li><%= link_to 'Cerrar sesión', destroy_user_session_path(current_user), :method => :delete %></li>
+          <li><%= link_to 'Cerrar sesión', destroy_user_session_path, :method => :delete %></li>
         </ul>
       </div>
     <% end %>
@@ -25,6 +25,7 @@
           <li><%= link_to 'Reservas', bookings_path %></li>
           <li><%= link_to 'Incidencias', tickets_path %></li>
           <% if user_signed_in? && current_user.is_user_admin? %>
+            <li><%= link_to 'Tareas', tasks_path %></li>
             <li><%= link_to 'Recursos', resources_path %></li>
             <li><%= link_to 'Roles', roles_path %></li>
             <li><%= link_to 'Urgencias', urgencies_path %></li>
